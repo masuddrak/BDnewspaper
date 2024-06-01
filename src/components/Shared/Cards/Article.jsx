@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 const Article = ({ article }) => {
     const {_id, title, description, image, date } = article
 
-    console.log(article)
     return (
-        <Link to={`/article-details/:${_id}`} className="card card-compact   bg-base-100 border-b-[1px]">
+        <Link to={`/article-details/${_id}`} className="card card-compact   bg-base-100 border-b-[1px]">
             <figure><img src={image} alt="Shoes" className="h-[200px] hover:opacity-85 transition-all w-full object-cover" /></figure>
             <div className="card-body px-2">
                 <h2 className="card-title hover:underline text-lg primary-text font-semibold">{title}</h2>

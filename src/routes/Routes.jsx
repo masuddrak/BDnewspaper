@@ -7,6 +7,7 @@ import SignUp from '../pages/SignUp/SignUp'
 import AddNews from '../pages/Dashboard/AddNews'
 import AllArticles from '../pages/AllArticles'
 import ArticleDetails from '../components/Shared/CardDetails/ArticleDetails'
+import axios from 'axios'
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ export const router = createBrowserRouter([
       {
         path: '/article-details/:id',
         element: <ArticleDetails></ArticleDetails>,
+        loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
       },
      
     ],
