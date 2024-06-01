@@ -30,14 +30,14 @@ const AddNewsForm = ({setPublisher, handelFormData,publishers, options, setTga, 
                                 </label>
 
                                 <Select
-                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
+                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 outline-rose-500 rounded-md '
                                     options={options}
                                     labelField="name"
                                     valueField="id"
                                     multi
                                     onChange={(values) => setTga(values)}
                                     color='#f43f5e'
-                                />;
+                                />
                             </div>
                             {/* publisher */}
                             <div className='space-y-1 text-sm'>
@@ -46,7 +46,7 @@ const AddNewsForm = ({setPublisher, handelFormData,publishers, options, setTga, 
                                 </label>
                                 <select
                                     required
-                                    className='w-full px-4 py-3 border-rose-300 focus:outline-rose-500 rounded-md'
+                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
                                     name='category'
                                  
                                 >

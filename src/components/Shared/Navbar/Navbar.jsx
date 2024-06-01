@@ -12,7 +12,7 @@ const Navbar = () => {
   const navlinks = <div>
     <CommonNvalink destination={"/"} pagename={"Home"} ></CommonNvalink>
     <CommonNvalink destination={"/add-article"} pagename={"Add Article"} ></CommonNvalink>
-    <CommonNvalink destination={"/"} pagename={"All Articles"} ></CommonNvalink>
+    <CommonNvalink destination={"/all-articles"} pagename={"All Articles"} ></CommonNvalink>
     <CommonNvalink destination={"/"} pagename={"Subscription"} ></CommonNvalink>
     <CommonNvalink destination={"/"} pagename={"Premium Articles"} ></CommonNvalink>
   </div>

@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.primary-text{
+    color: rgb(32, 34, 36);
+}

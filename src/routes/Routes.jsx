@@ -5,6 +5,8 @@ import ErrorPage from '../pages/ErrorPage'
 import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import AddNews from '../pages/Dashboard/AddNews'
+import AllArticles from '../pages/AllArticles'
+import ArticleDetails from '../components/Shared/CardDetails/ArticleDetails'
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +21,14 @@ export const router = createBrowserRouter([
       {
         path: '/add-Article',
         element: <AddNews></AddNews>,
+      },
+      {
+        path: '/all-articles',
+        element: <AllArticles></AllArticles>,
+      },
+      {
+        path: '/article-details/:id',
+        element: <ArticleDetails></ArticleDetails>,
       },
      
     ],

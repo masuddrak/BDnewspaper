@@ -86,8 +86,9 @@ const AddNews = () => {
         const image = form.image.files[0]
 
         try {
+            const date=new Date()
             const image_url = await imageUpload(image)
-            const formData = { tag, title, publisher, description, userInfo, image: image_url }
+            const formData = { tag, title, publisher, description, userInfo, image: image_url,date }
             await mutateAsync(formData)
             console.table(formData)
         } catch (error) {
