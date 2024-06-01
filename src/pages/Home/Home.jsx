@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>StayVista | Vacation Homes & Condo Rentals</title>
+        <title>BD Newspaper | Bangladesh Bigets News</title>
       </Helmet>
     </div>
   )

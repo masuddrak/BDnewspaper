@@ -3,13 +3,19 @@ import { AiOutlineMenu } from 'react-icons/ai'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
-import avatarImg from '../../../assets/images/placeholder.jpg'
+
 import CommonNvalink from './CommonNvalink'
 
 const Navbar = () => {
   const { user, logOut } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
-
+  const navlinks = <div>
+    <CommonNvalink destination={"/"} pagename={"Home"} ></CommonNvalink>
+    <CommonNvalink destination={"/add-article"} pagename={"Add Article"} ></CommonNvalink>
+    <CommonNvalink destination={"/"} pagename={"All Articles"} ></CommonNvalink>
+    <CommonNvalink destination={"/"} pagename={"Subscription"} ></CommonNvalink>
+    <CommonNvalink destination={"/"} pagename={"Premium Articles"} ></CommonNvalink>
+  </div>
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
       <div className='py-4 border-b-[1px]'>
@@ -17,7 +23,9 @@ const Navbar = () => {
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             <Link to='/' className='text-xl font-bold'>BD Newspaper</Link>
-            <CommonNvalink destination={"/"} pagename={"about"} >about</CommonNvalink>
+            <div>
+            {navlinks}
+            </div>
             {/* Dropdown Menu */}
             <div className='relative'>
               <div className='flex flex-row items-center gap-3'>
@@ -36,7 +44,7 @@ const Navbar = () => {
                     <img
                       className='rounded-full'
                       referrerPolicy='no-referrer'
-                      src={user && user.photoURL ? user.photoURL : avatarImg}
+                      src={user && user.photoURL ? user.photoURL : ""}
                       alt='profile'
                       height='30'
                       width='30'
