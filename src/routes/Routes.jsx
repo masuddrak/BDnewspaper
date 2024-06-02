@@ -9,6 +9,12 @@ import AllArticles from '../pages/AllArticles'
 import ArticleDetails from '../components/Shared/CardDetails/ArticleDetails'
 import axios from 'axios'
 import MyArticle from '../pages/MyArticle'
+import DashboardLayout from '../layouts/DashboardLayout'
+import PrivateRoute from './PrivateRoute'
+import AllUsers from '../pages/Dashboard/AllUsers'
+import AllArticle from '../pages/Dashboard/AllArticle'
+import AddPublisher from '../pages/Dashboard/AddPublisher'
+import DashoardHome from '../pages/Dashboard/DashoardHome'
 
 export const router = createBrowserRouter([
   {
@@ -42,4 +48,27 @@ export const router = createBrowserRouter([
   },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <SignUp /> },
+  // dashbord Routes
+  {
+    path: "/dashboard",
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    children: [
+      {
+        index: true,
+        element: <PrivateRoute><DashoardHome></DashoardHome></PrivateRoute>
+      },
+      {
+        path: "/dashboard/all-users",
+        element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+      },
+      {
+        path: "/dashboard/all-article",
+        element: <PrivateRoute><AllArticle></AllArticle></PrivateRoute>
+      },
+      {
+        path: "/dashboard/add-publisher",
+        element: <PrivateRoute><AddPublisher></AddPublisher></PrivateRoute>
+      },
+    ]
+  },
 ])
