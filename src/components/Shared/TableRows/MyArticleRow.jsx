@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 const MyArticleRow = ({ article, index }) => {
-    const { _id, title, status, isPremium, description, image, date } = article
+    const { _id, title, status, isPremium} = article
     return (
         <tr>
 

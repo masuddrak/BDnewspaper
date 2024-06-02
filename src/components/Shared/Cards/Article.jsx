@@ -14,9 +14,7 @@ const Article = ({ article }) => {
                 </div> : description : description}</div>
                 <div className="flex  gap-3 mb-3">
                     <img src={image} alt="Shoes" className="h-[30px] hover:opacity-85 transition-all rounded-full w-[30px] object-fill" />
-                    <p className="text-gray-600 ">{date}</p>
-                    {/* <p className="text-gray-600 ">{date}</p> */}
-
+                    <p className="text-gray-600 ">{new Date(date).toDateString()}</p>
                 </div>
             </div>
         </Link>
