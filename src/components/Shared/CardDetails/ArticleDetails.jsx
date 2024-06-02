@@ -23,13 +23,15 @@ const ArticleDetails = () => {
         } catch (error) {
             console.log(error.message)
         }
-    }, [_id,data])
+    }, [_id, data])
     return (
-        <div>
-            <img src={image} alt="" />
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <p>{viewCount}</p>
+        <div className="w-4/6 mx-auto">
+            <div>
+                <img src={image} alt="" />
+                <h1>{title}</h1>
+                <p>{description}</p>
+                <p>{viewCount}</p>
+            </div>
         </div>
     );
 };
