@@ -8,6 +8,7 @@ import AddNews from '../pages/Dashboard/AddNews'
 import AllArticles from '../pages/AllArticles'
 import ArticleDetails from '../components/Shared/CardDetails/ArticleDetails'
 import axios from 'axios'
+import MyArticle from '../pages/MyArticle'
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: '/all-articles',
         element: <AllArticles></AllArticles>,
+      },
+      {
+        path: '/my-article',
+        element: <MyArticle></MyArticle>,
       },
       {
         path: '/article-details/:id',

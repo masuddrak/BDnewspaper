@@ -13,6 +13,7 @@ const Navbar = () => {
     <CommonNvalink destination={"/"} pagename={"Home"} ></CommonNvalink>
     <CommonNvalink destination={"/add-article"} pagename={"Add Article"} ></CommonNvalink>
     <CommonNvalink destination={"/all-articles"} pagename={"All Articles"} ></CommonNvalink>
+    <CommonNvalink destination={"/my-article"} pagename={"My Article"} ></CommonNvalink>
     <CommonNvalink destination={"/"} pagename={"Subscription"} ></CommonNvalink>
     <CommonNvalink destination={"/"} pagename={"Premium Articles"} ></CommonNvalink>
   </div>

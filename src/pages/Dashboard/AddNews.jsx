@@ -88,8 +88,10 @@ const AddNews = () => {
         try {
             const date=new Date()
             const viewCount=1
+            const status="pending"
+            const isPremium="no"
             const image_url = await imageUpload(image)
-            const formData = { tag, title, publisher, description, userInfo, image: image_url,date,viewCount }
+            const formData = { tag, title, publisher, description, userInfo, image: image_url,date,viewCount,status,isPremium }
             await mutateAsync(formData)
             console.table(formData)
         } catch (error) {
