@@ -46,13 +46,16 @@ const AddNews = () => {
     console.log(tag)
     // create publiser
     const [publishers, setPublishers] = useState([])
-    const [publisher, setPublisher] = useState({})
+    const [publisher, setPublisher] = useState("")
     useEffect(() => {
-        fetch("category.json")
+        fetch("http://localhost:5000/publiser")
             .then(res => res.json())
             .then(data => setPublishers(data))
     }, [])
-
+    const handelPublisher=(e)=>{
+        setPublisher(e)
+    }
+    console.log(publisher, publishers)
     // handel post data room
     const { mutateAsync } = useMutation({
         mutationFn: async (formData) => {
@@ -86,12 +89,12 @@ const AddNews = () => {
         const image = form.image.files[0]
 
         try {
-            const date=new Date()
-            const viewCount=1
-            const status="pending"
-            const isPremium="no"
+            const date = new Date()
+            const viewCount = 1
+            const status = "pending"
+            const isPremium = "no"
             const image_url = await imageUpload(image)
-            const formData = { tag, title, publisher, description, userInfo, image: image_url,date,viewCount,status,isPremium }
+            const formData = { tag, title, publisher, description, userInfo, image: image_url, date, viewCount, status, isPremium }
             await mutateAsync(formData)
             console.table(formData)
         } catch (error) {
@@ -102,7 +105,7 @@ const AddNews = () => {
     }
     return (
         <div>
-            <AddNewsForm options={options} setPublisher={setPublisher} publishers={publishers} setTga={setTga} handelFormData={handelFormData} handelPreviewInage={handelPreviewInage} imagePreview={imagePreview} imageName={imageName} loading={loading}></AddNewsForm>
+            <AddNewsForm options={options} handelPublisher={handelPublisher} publishers={publishers} setTga={setTga} handelFormData={handelFormData} handelPreviewInage={handelPreviewInage} imagePreview={imagePreview} imageName={imageName} loading={loading}></AddNewsForm>
         </div>
     );
 };

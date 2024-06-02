@@ -1,7 +1,7 @@
 import { SiProteus } from 'react-icons/si';
 import Select from 'react-dropdown-select';
 
-const AddNewsForm = ({setPublisher, handelFormData,publishers, options, setTga, handelPreviewInage, imagePreview, imageName, loading }) => {
+const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTga, handelPreviewInage, imagePreview, imageName, loading }) => {
 
     return (
         <div className='w-full min-h-[calc(100vh-200px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
@@ -48,11 +48,10 @@ const AddNewsForm = ({setPublisher, handelFormData,publishers, options, setTga, 
                                     required
                                     className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
                                     name='category'
-                                 
+                                   onChange={(e)=>handelPublisher(e.currentTarget.value)}
                                 >
                                     {publishers.map(singlePublisher => (
-                                        <option value={singlePublisher}  key={singlePublisher.name}>
-                                            {setPublisher(singlePublisher)}
+                                        <option value={singlePublisher.name}  key={singlePublisher.name}>
                                             {singlePublisher.name}
                                         </option>
                                     ))}
