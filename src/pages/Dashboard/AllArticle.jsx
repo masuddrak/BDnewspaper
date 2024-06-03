@@ -2,7 +2,7 @@ import AdminArticleRow from "../../components/Shared/TableRows/AdminArticleRow";
 import useAllArticles from "../../hooks/useAllArticles";
 
 const AllArticle = () => {
-    const { allArticles } = useAllArticles()
+    const { allArticles,refetch } = useAllArticles()
 
     return (
         <div className='container mx-auto px-4 sm:px-8'>
@@ -64,6 +64,12 @@ const AllArticle = () => {
                                         scope='col'
                                         className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
                                     >
+                                        isPremium
+                                    </th>
+                                    <th
+                                        scope='col'
+                                        className='px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal'
+                                    >
                                         approve
                                     </th>
                                     <th
@@ -89,7 +95,7 @@ const AllArticle = () => {
                             </thead>
                             <tbody>
                                 {/* Room row data */}
-                                {allArticles.map((article, index) => <AdminArticleRow key={article._id} index={index} article={article}></AdminArticleRow>)}
+                                {allArticles.map((article, index) => <AdminArticleRow key={article._id} index={index} article={article} refetch={refetch}></AdminArticleRow>)}
                             </tbody>
                         </table>
                     </div>
