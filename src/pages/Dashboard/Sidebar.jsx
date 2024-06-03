@@ -38,7 +38,7 @@ const Sidebar = () => {
             >
                 <div>
                     <div>
-                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-rose-100 mx-auto'>
+                        <div className='w-full hidden md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-green-300 mx-auto'>
                             <Link to='/' className='text-xl font-bold'>BD Newspaper</Link>
                         </div>
                     </div>
