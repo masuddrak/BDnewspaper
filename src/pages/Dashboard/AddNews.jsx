@@ -64,7 +64,7 @@ const AddNews = () => {
         },
         onSuccess: () => {
             toast.success("Successfully added News")
-            naviget('/')
+            naviget('/my-article')
         }
     })
     // handel Preview iage
