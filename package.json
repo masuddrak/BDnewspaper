@@ -20,6 +20,7 @@
     "prop-types": "^15.8.1",
     "query-string": "^9.0.0",
     "react": "^18.2.0",
+    "react-countup": "^6.5.3",
     "react-date-range": "^2.0.1",
     "react-dom": "^18.2.0",
     "react-dropdown-select": "^4.11.2",
@@ -30,7 +31,8 @@
     "react-router-dom": "^6.23.1",
     "react-select": "^5.8.0",
     "react-spinners": "^0.13.8",
-    "sweetalert2": "^11.11.0"
+    "sweetalert2": "^11.11.0",
+    "swiper": "^11.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
