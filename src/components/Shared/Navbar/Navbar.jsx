@@ -15,7 +15,7 @@ const Navbar = () => {
     <CommonNvalink destination={"/all-articles"} pagename={"All Articles"} ></CommonNvalink>
     <CommonNvalink destination={"/my-article"} pagename={"My Article"} ></CommonNvalink>
     <CommonNvalink destination={"/"} pagename={"Subscription"} ></CommonNvalink>
-    <CommonNvalink destination={"/"} pagename={"Premium Articles"} ></CommonNvalink>
+    <CommonNvalink destination={"/premium-articles"} pagename={"Premium Articles"} ></CommonNvalink>
   </div>
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>

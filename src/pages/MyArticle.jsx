@@ -7,16 +7,15 @@ import MyArticleRow from "../components/Shared/TableRows/MyArticleRow";
 const MyArticle = () => {
     const { user, loading } = useAuth()
     const axiosSecure = useAxiosSecure()
-    const { data: myArticle = [] } = useQuery({
+    const { data: myArticle = [],refetch } = useQuery({
         queryKey: ["myArticle", user?.email],
         enabled: !loading && !!user?.email,
         queryFn: async () => {
             const res = await axiosSecure(`/my-articles/${user.email}`)
             return res.data
         }
-
     })
-    console.log(myArticle)
+    
     return (
         <div>
             <>
@@ -81,7 +80,7 @@ const MyArticle = () => {
                                     </thead>
                                     <tbody>
                                         {/* Room row data */}
-                                        {myArticle.map((article,index)=><MyArticleRow key={article._id} index={index} article={article}></MyArticleRow>)}
+                                        {myArticle.map((article,index)=><MyArticleRow key={article._id} index={index} article={article} refetch={refetch}></MyArticleRow>)}
                                     </tbody>
                                 </table>
                             </div>

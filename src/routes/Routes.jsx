@@ -15,6 +15,8 @@ import AllUsers from '../pages/Dashboard/AllUsers'
 import AllArticle from '../pages/Dashboard/AllArticle'
 import AddPublisher from '../pages/Dashboard/AddPublisher'
 import DashoardHome from '../pages/Dashboard/DashoardHome'
+import UpdateArticle from '../pages/UpdateArticle'
+import PremiumArticles from '../pages/PremiumArticles'
 
 export const router = createBrowserRouter([
   {
@@ -39,8 +41,17 @@ export const router = createBrowserRouter([
         element: <MyArticle></MyArticle>,
       },
       {
+        path: '/premium-articles',
+        element: <PremiumArticles></PremiumArticles>,
+      },
+      {
         path: '/article-details/:id',
         element: <ArticleDetails></ArticleDetails>,
+        loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
+      },
+      {
+        path: '/upadte-article/:id',
+        element: <UpdateArticle></UpdateArticle>,
         loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
       },
      
