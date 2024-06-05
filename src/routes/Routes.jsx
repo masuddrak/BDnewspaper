@@ -17,6 +17,7 @@ import AddPublisher from '../pages/Dashboard/AddPublisher'
 import DashoardHome from '../pages/Dashboard/DashoardHome'
 import UpdateArticle from '../pages/UpdateArticle'
 import PremiumArticles from '../pages/PremiumArticles'
+import Subscription from '../pages/Subscription'
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: '/my-article',
         element: <MyArticle></MyArticle>,
+      },
+      {
+        path: '/subscription',
+        element: <Subscription></Subscription>,
       },
       {
         path: '/premium-articles',

@@ -1,9 +1,10 @@
+import AdminBarchart from "../../components/Charts/AdminBarchart";
 
 
 const DashoardHome = () => {
     return (
         <div>
-            Dash bord home
+            <AdminBarchart></AdminBarchart>
         </div>
     );
 };
