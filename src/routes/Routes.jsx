@@ -18,6 +18,7 @@ import DashoardHome from '../pages/Dashboard/DashoardHome'
 import UpdateArticle from '../pages/UpdateArticle'
 import PremiumArticles from '../pages/PremiumArticles'
 import Subscription from '../pages/Subscription'
+import PremiumProvider from './PremiumProvider'
 
 export const router = createBrowserRouter([
   {
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/premium-articles',
-        element: <PremiumArticles></PremiumArticles>,
+        element: <PremiumProvider><PremiumArticles></PremiumArticles></PremiumProvider>,
       },
       {
         path: '/article-details/:id',

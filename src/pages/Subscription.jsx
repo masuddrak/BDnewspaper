@@ -3,13 +3,16 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/Stripe/CheckoutForm";
 
+
 const stripePromise = loadStripe("pk_test_51PL5mfFwJGWV6jk7A2S5GBJJENsVJVX1cx3jB8f1flb9uWD7R7JHNvuRcZhEw3BeBuTx4q9tHuTgktKL4sQiBRBF00DRf7J9Ee");
 
 const Subscription = () => {
-    const [subscriptionItem, setSubscriptionItem] = useState("0-5")
+    
+    const [subscriptionItem, setSubscriptionItem] = useState("60000-5")
     const subscriptionLilimt = parseInt(subscriptionItem.split("-")[0])
     const subscriptionPrice = parseInt(subscriptionItem.split("-")[1])
     console.log(subscriptionLilimt)
+   
     return (
         <div className="w-[400px] mx-auto space-y-10 " >
             <div className="flex justify-center">
