@@ -11,7 +11,7 @@ const AddPublisher = () => {
         const image = form.image.files[0]
         try {
             const image_url = await imageUpload(image)
-            const publiserInfo = { name, iamge: image_url }
+            const publiserInfo = { name, iamge: image_url,totalCount:0 }
             const { data } = await axiosSecure.post("/add-publiser", publiserInfo)
             if (data.acknowledged) {
                 toast.success('Publiser Added Successful')

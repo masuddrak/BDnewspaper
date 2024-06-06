@@ -62,7 +62,9 @@ const AddNews = () => {
             const { data } = await axiosSecure.post(`/add-news`, formData)
             return data
         },
-        onSuccess: () => {
+        onSuccess: async() => {
+            const {data}=await axiosSecure.put(`/increment-publisher/${publisher}`,{total:1})
+            console.log("increment value",data)
             toast.success("Successfully added News")
             naviget('/my-article')
         }

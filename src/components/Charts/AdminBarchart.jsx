@@ -11,7 +11,7 @@ const AdminBarchart = () => {
     const { data: adminChart = [] } = useQuery({
         queryKey: ["adminChart"],
         queryFn: async () => {
-            const res = await axiosSecure("/publisher-count")
+            const res = await axiosSecure("/publiser")
             return res.data
         }
     })
@@ -29,7 +29,7 @@ const AdminBarchart = () => {
     };
     // pie charts
     const pieChartData = adminChart.map(item => {
-        return { name: item.publisher, value: item.viewCount }
+        return { name: item.name, value: item.totalCount }
     })
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent,  }) => {
@@ -59,9 +59,9 @@ const AdminBarchart = () => {
                         }}
                     >
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="publisher" />
+                        <XAxis dataKey="name" />
                         <YAxis />
-                        <Bar dataKey="viewCount" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        <Bar dataKey="totalCount" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                             {adminChart.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={colors[index % 20]} />
                             ))}

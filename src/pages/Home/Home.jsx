@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import PremiumSection from '../../components/PremiumSection/PremiumSection'
 import UserCalculation from '../../components/UserCalculation/UserCalculation'
 import ArticlesSlider from '../../components/Sliders/ArticlesSlider'
+import Publishers from '../../components/Publishers/Publishers'
 
 
 const Home = () => {
@@ -17,6 +18,8 @@ const Home = () => {
         </div>
         <div></div>
       </div>
+      {/* publisher */}
+      <Publishers></Publishers>
       <UserCalculation></UserCalculation>
       <PremiumSection></PremiumSection>
     </div>
