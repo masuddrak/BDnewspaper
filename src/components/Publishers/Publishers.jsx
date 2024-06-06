@@ -9,7 +9,7 @@ const Publishers = () => {
                     <div className="w-[150px] h-[100px] ">
                         <img className="w-full h-full" src={publisher.iamge} alt="" />
                     </div>
-                    <h3 className="text-xl font-bold">{publisher.name}</h3>
+                    <h3 className="card-title hover:underline  primary-text font-semibold">{publisher.name}</h3>
                 </div>)
             }
         </div>
