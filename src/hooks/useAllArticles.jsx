@@ -2,16 +2,16 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosCommon from "./useAxiosCommon";
 
 
-const useAllArticles = () => {
+const useAllArticles = (selectedPage,perpageItem) => {
     const axiosCommon = useAxiosCommon()
-    const { data: allArticles = [],refetch } = useQuery({
+    const { data: allArticles = [],refetch,isLoading } = useQuery({
         queryKey: ["all-articles"],
         queryFn: async () => {
-            const { data } = await axiosCommon("/all-articles")
+            const { data } = await axiosCommon(`/all-articles?page=${selectedPage}&size=${perpageItem}`)
             return data
         }
     })
-    return {allArticles,refetch}
+    return {allArticles,refetch,isLoading}
 };
 
 

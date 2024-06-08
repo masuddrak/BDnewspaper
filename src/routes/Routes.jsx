@@ -81,7 +81,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard/all-article",
-        element: <PrivateRoute><AllArticle></AllArticle></PrivateRoute>
+        element: <PrivateRoute><AllArticle></AllArticle></PrivateRoute>,
+        loader:()=>axios("http://localhost:5000/total-article")
       },
       {
         path: "/dashboard/add-publisher",
