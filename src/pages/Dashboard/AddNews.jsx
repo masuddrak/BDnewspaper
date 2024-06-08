@@ -43,7 +43,12 @@ const AddNews = () => {
             name: 'Sports'
         },
     ];
-    console.log(tag)
+    const tags=[]
+    for(const element of tag){
+        tags.push(element.name)
+    }
+  
+    
     // create publiser
     const [publishers, setPublishers] = useState([])
     const [publisher, setPublisher] = useState("")
@@ -96,7 +101,7 @@ const AddNews = () => {
             const status = "pending"
             const isPremium = "no"
             const image_url = await imageUpload(image)
-            const formData = { tag, title, publisher, description, userInfo, image: image_url, date, viewCount, status, isPremium }
+            const formData = { tags, title, publisher, description, userInfo, image: image_url, date, viewCount, status, isPremium }
             await mutateAsync(formData)
             console.table(formData)
         } catch (error) {

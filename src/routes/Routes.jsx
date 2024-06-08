@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/article-details/:id',
-        element: <ArticleDetails></ArticleDetails>,
+        element: <PrivateRoute><ArticleDetails></ArticleDetails></PrivateRoute>,
         loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
       },
       {
