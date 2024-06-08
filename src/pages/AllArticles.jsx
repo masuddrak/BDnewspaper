@@ -1,34 +1,53 @@
 import { useEffect, useState } from "react";
 import Article from "../components/Shared/Cards/Article";
 import useAllPubliser from "../hooks/useAllPubliser";
-import useApproveArticles from "../hooks/useApproveArticles";
-import LoadingSpinner from "../components/Shared/LoadingSpinner";
 import useAxiosCommon from "../hooks/useAxiosCommon";
 import { allTgas } from "../utils/tags";
+import LoadingSpinner from "../components/Shared/LoadingSpinner";
+import { useLoaderData } from "react-router-dom";
 
 const AllArticles = () => {
     const [articles, setApproveArticles] = useState([])
     const [publisher, setPublisher] = useState("")
     const [tag, setTag] = useState("")
-    const [searchText,setSearchText]=useState("")
-    // const { approveArticles, isLoading } = useApproveArticles({publisher,tag})
+    const [searchText, setSearchText] = useState("")
     const { publishers } = useAllPubliser()
     const axiosCommon = useAxiosCommon()
-
+    // pagination 
+    const [selectedPage, setSelectedPage] = useState(0)
+    const [perpageItem, setPerpageItem] = useState(8)
+    const count = useLoaderData()
+    const numberOfPage = Math.ceil(count.data.count / perpageItem)
+    const pages = [...Array(numberOfPage).keys()]
+    // pagination 
     useEffect(() => {
         (async () => {
-            const { data } = await axiosCommon(`/all-approve-articles?findPublisher=${publisher}&findTag=${tag}&searchText=${searchText}`)
+            const { data } = await axiosCommon(`/all-approve-articles?findPublisher=${publisher}&findTag=${tag}&searchText=${searchText}&page=${selectedPage}&size=${perpageItem}`)
             console.log(data)
             setApproveArticles(data)
         })()
-    }, [tag, publisher, axiosCommon,searchText])
-
-
+    }, [tag, publisher, axiosCommon, searchText, selectedPage, perpageItem])
     const tags = allTgas()
+    // handel page
+    const handelPage = (e) => {
+        const pagesValue = parseInt(e.target.value)
+        setPerpageItem(pagesValue)
+    }
+    const handelPreviusPage = () => {
+        if (selectedPage > 0) {
+            setSelectedPage(selectedPage - 1)
+        }
+    }
+    const handelNextPage = () => {
+        if (selectedPage < pages.length - 1) {
+            setSelectedPage(selectedPage + 1)
+        }
+    }
+    // handel page
 
-    // if (isLoading) {
-    //     return <LoadingSpinner></LoadingSpinner>
-    // }
+    if (articles.length < 1) {
+        return <LoadingSpinner></LoadingSpinner>
+    }
     const handelSearch = (e) => {
         e.preventDefault()
         const searchTitle = e.target.title.value
@@ -62,7 +81,7 @@ const AllArticles = () => {
                     <form onSubmit={handelSearch}>
                         <p>Search Title</p>
                         <input type="text" name="title" placeholder="type title" className="px-2 border border-1 border-gray-900 " />
-                        <input type="submit"  value="search" className="bg-gray-800 text-white ml-1 px-1" />
+                        <input type="submit" value="search" className="bg-gray-800 text-white ml-1 px-1" />
                     </form>
                 </div>
             </div>
@@ -71,6 +90,23 @@ const AllArticles = () => {
                 {
                     articles?.map(article => <Article key={article._id} article={article}></Article>)
                 }
+            </div>
+            {/* pagination */}
+
+            <div className="flex justify-center my-4">
+                <div>
+                    <button onClick={handelPreviusPage} className="btn bg-neutral-800 mx-2 px-2 text-white">previus</button>
+                    {
+                        pages.map(page => <button key={page} onClick={() => setSelectedPage(page)} className={selectedPage === page ? "btn bg-green-500 mx-2 px-2 text-white" : "btn bg-neutral-800 mx-2 px-2 text-white"}>{page}</button>)
+                    }
+                    <button onClick={handelNextPage} className="btn bg-neutral-800 mx-2 px-2 text-white">Next</button>
+                    <select name="item" value={perpageItem} onChange={handelPage} className="border border-1 border-gray-800">
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                    </select>
+                </div>
+
             </div>
         </section>
     );

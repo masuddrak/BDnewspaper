@@ -37,6 +37,7 @@ export const router = createBrowserRouter([
       {
         path: '/all-articles',
         element: <AllArticles></AllArticles>,
+        loader:()=>axios("http://localhost:5000/total-article")
       },
       {
         path: '/my-article',

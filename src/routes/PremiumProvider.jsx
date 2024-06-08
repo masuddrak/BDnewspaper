@@ -12,9 +12,7 @@ const PremiumProvider = ({children}) => {
     return <Navigate to='/subscription' state={location.pathname} replace='true' />
   }
   
-  PremiumProvider.propTypes = {
-    children: PremiumProvider.element,
-  }
+
 
 
 export default PremiumProvider;
