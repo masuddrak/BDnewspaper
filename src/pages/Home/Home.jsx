@@ -3,6 +3,8 @@ import PremiumSection from '../../components/PremiumSection/PremiumSection'
 import UserCalculation from '../../components/UserCalculation/UserCalculation'
 import ArticlesSlider from '../../components/Sliders/ArticlesSlider'
 import Publishers from '../../components/Publishers/Publishers'
+import LeftSide from './LeftSide'
+import RightSide from './RightSide'
 
 
 const Home = () => {
@@ -11,12 +13,16 @@ const Home = () => {
       <Helmet>
         <title>BD Newspaper | Bangladesh Bigets News</title>
       </Helmet>
-      <div className='grid grid-cols-4'>
-        <div></div>
+      <div className='md:grid grid-cols-4 gap-4'>
+        <div>
+          <LeftSide></LeftSide>
+        </div>
         <div className='col-span-2'>
           <ArticlesSlider></ArticlesSlider>
         </div>
-        <div></div>
+        <div>
+          <RightSide></RightSide>
+        </div>
       </div>
       {/* publisher */}
       <Publishers></Publishers>

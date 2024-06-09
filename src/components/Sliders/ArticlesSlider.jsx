@@ -35,15 +35,22 @@ const ArticlesSlider = () => {
                 {
                     allArticles.map(article => <SwiperSlide key={article._id}>
                         <Link to={`/article-details/${article._id}`} className="card card-compact   bg-base-100 border-b-[1px]">
-                            <figure><img src={article.image} alt="article image" className="h-[400px] hover:opacity-85 transition-all w-full object-cover top-0" /></figure>
+                            
+                            <div style={{
+                                backgroundImage: `url(${article.image})`
+                            }} className="h-[400px] bg-no-repeat  hover:opacity-85 transition-all w-full bg-cover object-cover top-0">
+
+                            </div>
                             <div className="card-body px-2">
-                                <div className='flex items-center gap-1'>
-                                    <span className='text-red-600 flex items-center gap-1'> <RiLiveLine></RiLiveLine> LIVE </span>
-                                    <h2 className="card-title hover:underline text-lg primary-text font-semibold">
+                                <div className='text-2xl'>
+                                    <h2 className="card-title hover:underline primary-text font-semibold">
+                                        <div>
+                                            <span className='text-red-600 flex items-center gap-1'> <RiLiveLine></RiLiveLine> LIVE </span>
+                                        </div>
                                         {article.title}</h2>
                                 </div>
                                 <div className="my-4 text-gray-600 text-sm">{article.description ? article.description.length > 200 ? <div>
-                                    {article.description.slice(0, 150)}..
+                                    {article.description.slice(0, 250)}..
                                     <a className=" underline text-black">Read More</a>
                                 </div> : article.description : article.description}</div>
                                 <div className="flex  gap-3 mb-3">
