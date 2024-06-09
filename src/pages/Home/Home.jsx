@@ -9,7 +9,7 @@ import RightSide from './RightSide'
 
 const Home = () => {
   return (
-    <div className='w-5/6 mx-auto'>
+    <div className=''>
       <Helmet>
         <title>BD Newspaper | Bangladesh Bigets News</title>
       </Helmet>

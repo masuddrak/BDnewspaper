@@ -9,14 +9,14 @@ import CommonNvalink from './CommonNvalink'
 const Navbar = () => {
   const { user, logOut } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
-  const navlinks = <div>
+  const navlinks = <>
     <CommonNvalink destination={"/"} pagename={"Home"} ></CommonNvalink>
     <CommonNvalink destination={"/add-article"} pagename={"Add Article"} ></CommonNvalink>
     <CommonNvalink destination={"/all-articles"} pagename={"All Articles"} ></CommonNvalink>
     <CommonNvalink destination={"/my-article"} pagename={"My Article"} ></CommonNvalink>
     <CommonNvalink destination={"/subscription"} pagename={"Subscription"} ></CommonNvalink>
     <CommonNvalink destination={"/premium-articles"} pagename={"Premium Articles"} ></CommonNvalink>
-  </div>
+  </>
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
       <div className='py-4 border-b-[1px]'>
@@ -24,8 +24,8 @@ const Navbar = () => {
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             <Link to='/' className='text-xl font-bold'>BD Newspaper</Link>
-            <div>
-            {navlinks}
+            <div className='hidden md:flex'>
+              {navlinks}
             </div>
             {/* Dropdown Menu */}
             <div className='relative'>
@@ -61,22 +61,20 @@ const Navbar = () => {
               {isOpen && (
                 <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
                   <div className='flex flex-col cursor-pointer'>
-                    <Link
-                      to='/'
-                      className='block md:hidden px-4 py-3 hover:bg-neutral-100 transition font-semibold'
-                    >
-                      Home
-                    </Link>
+
+                    <div className='flex flex-col md:hidden'>
+                      {navlinks}
+                    </div>
 
                     {user ? (
                       <>
-                      <Link
+                        <Link
                           to='/dashboard'
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >
                           Dashoard
                         </Link>
-                      <Link
+                        <Link
                           to='/upadte-profile'
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >

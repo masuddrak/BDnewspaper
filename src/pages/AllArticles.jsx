@@ -55,27 +55,29 @@ const AllArticles = () => {
     }
     console.log(searchText)
     return (
-        <section className="w-5/6 mx-auto">
-            <div className="flex gap-3 my-5">
-                <div>
-                    <p>Publisher sort</p>
-                    <select className="border border-1 border-gray-900"
-                        onChange={(e) => setPublisher(e.target.value)}
-                    >
-                        {
-                            publishers.map(publisher => <option key={publisher._id} value={publisher.name}>{publisher.name}</option>)
-                        }
-                    </select>
-                </div>
-                <div>
-                    <p>Tag sort</p>
-                    <select className="border border-1 border-gray-900"
-                        onChange={(e) => setTag(e.target.value)}
-                    >
-                        {
-                            tags.map(tag => <option key={tag.id} value={tag.name}>{tag.name}</option>)
-                        }
-                    </select>
+        <section className="">
+            <div className="md:flex gap-2 mb-3">
+                <div className="flex gap-2">
+                    <div>
+                        <p>Publisher sort</p>
+                        <select className="border border-1 border-gray-900"
+                            onChange={(e) => setPublisher(e.target.value)}
+                        >
+                            {
+                                publishers.map(publisher => <option key={publisher._id} value={publisher.name}>{publisher.name}</option>)
+                            }
+                        </select>
+                    </div>
+                    <div>
+                        <p>Tag sort</p>
+                        <select className="border border-1 border-gray-900"
+                            onChange={(e) => setTag(e.target.value)}
+                        >
+                            {
+                                tags.map(tag => <option key={tag.id} value={tag.name}>{tag.name}</option>)
+                            }
+                        </select>
+                    </div>
                 </div>
                 <div>
                     <form onSubmit={handelSearch}>
@@ -86,7 +88,7 @@ const AllArticles = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-5">
+            <div className="md:grid md:grid-cols-3 lg:grid-cols-4 gap-5">
                 {
                     articles?.map(article => <Article key={article._id} article={article}></Article>)
                 }

@@ -45,13 +45,13 @@ const AddPublisher = () => {
                         name='name'
                         id='name'
                         placeholder='Enter Your Name Here'
-                        className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-green-400 bg-gray-200 text-gray-900'
+                        className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-gray-900 bg-gray-200 text-gray-900'
                         data-temp-mail-org='0'
                     />
                 </div>
                 <button
                     type='submit'
-                    className='w-full p-3 mt-5 text-center font-medium  transition duration-200 rounded shadow-md bg-green-400'
+                    className='w-full text-white p-3 mt-5 text-center font-medium  transition duration-200 rounded shadow-md bg-gray-900'
                 >
                     Save & Continue
                 </button>

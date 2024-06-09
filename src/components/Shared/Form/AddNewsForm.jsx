@@ -4,9 +4,10 @@ import Select from 'react-dropdown-select';
 const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTga, handelPreviewInage, imagePreview, imageName, loading }) => {
 
     return (
-        <div className='w-full min-h-[calc(100vh-200px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50'>
+        <div className='w-full min-h-[calc(100vh-200px)] flex flex-col justify-center items-center text-gray-800 rounded-xl '>
 
-            <form onSubmit={handelFormData} className='w-4/6 mx-auto'>
+            <form onSubmit={handelFormData} className=''>
+                <h3 className='text-3xl font-semibold text-center mt-3'>Create New Article</h3>
                 <div className='w-full'>
                     <div className='space-y-5'>
                         <div className='space-y-1 text-sm'>
@@ -14,7 +15,7 @@ const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTg
                                 Title
                             </label>
                             <input
-                                className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
+                                className='w-full px-4 py-3 text-gray-800 border border-gray-900 focus:outline-gray-900 rounded-md '
                                 name='title'
                                 id='title'
                                 type='text'
@@ -30,7 +31,7 @@ const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTg
                                 </label>
 
                                 <Select
-                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 outline-rose-500 rounded-md '
+                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 outline-gray-900 rounded-md '
                                     options={options}
                                     labelField="name"
                                     valueField="id"
@@ -46,7 +47,7 @@ const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTg
                                 </label>
                                 <select
                                     required
-                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
+                                    className='w-full px-4 py-2 text-gray-800 border border-gray-900 focus:outline-gray-900 rounded-md '
                                     name='category'
                                    onChange={(e)=>handelPublisher(e.currentTarget.value)}
                                 >
@@ -71,7 +72,7 @@ const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTg
                                                 accept='image/*'
                                                 hidden
                                             />
-                                            <div className='bg-rose-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-rose-500'>
+                                            <div className='bg-gray-900 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-gray-900'>
                                                 {imageName ? <span>
                                                     {imageName.length > 15 ? imageName.split('.')[0].slice(0, 15) + "...." + imageName.split('.')[1] : imageName}
                                                 </span> : "Upload Image"}
@@ -93,14 +94,14 @@ const AddNewsForm = ({handelPublisher, handelFormData,publishers, options, setTg
 
                     <textarea
                         id='description'
-                        className='block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-rose-300 focus:outline-rose-500 '
+                        className='block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-gray-900 focus:outline-gray-900'
                         name='description'
                     ></textarea>
                 </div>
                 <button
                     disabled={loading}
                     type='submit'
-                    className='w-1/5 p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-rose-500'
+                    className='p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-gray-900'
                 >
                     {
                         loading ? <SiProteus className='animate-spin m-auto'></SiProteus> : "Save & Continue"
