@@ -11,8 +11,4 @@ const PremiumProvider = ({children}) => {
     if (user && singleUser.role==="premium" && singleUser.date>today) return children
     return <Navigate to='/subscription' state={location.pathname} replace='true' />
   }
-  
-
-
-
 export default PremiumProvider;

@@ -19,6 +19,8 @@ import UpdateArticle from '../pages/UpdateArticle'
 import PremiumArticles from '../pages/PremiumArticles'
 import Subscription from '../pages/Subscription'
 import PremiumProvider from './PremiumProvider'
+import AdminProvider from './AdminProvider'
+import UpdateProfile from '../pages/UpdateProfile'
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +50,10 @@ export const router = createBrowserRouter([
         element: <Subscription></Subscription>,
       },
       {
+        path: '/upadte-profile',
+        element: <UpdateProfile></UpdateProfile>,
+      },
+      {
         path: '/premium-articles',
         element: <PremiumProvider><PremiumArticles></PremiumArticles></PremiumProvider>,
       },
@@ -69,7 +75,7 @@ export const router = createBrowserRouter([
   // dashbord Routes
   {
     path: "/dashboard",
-    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    element: <PrivateRoute><AdminProvider><DashboardLayout></DashboardLayout></AdminProvider></PrivateRoute>,
     children: [
       {
         index: true,

@@ -5,7 +5,7 @@ import useAxiosCommon from "./useAxiosCommon";
 const useAllArticles = (selectedPage,perpageItem) => {
     const axiosCommon = useAxiosCommon()
     const { data: allArticles = [],refetch,isLoading } = useQuery({
-        queryKey: ["all-articles"],
+        queryKey: ["all-articles",selectedPage,perpageItem],
         queryFn: async () => {
             const { data } = await axiosCommon(`/all-articles?page=${selectedPage}&size=${perpageItem}`)
             return data
