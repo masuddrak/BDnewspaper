@@ -5,6 +5,7 @@ import useAxiosCommon from "../hooks/useAxiosCommon";
 import { allTgas } from "../utils/tags";
 import LoadingSpinner from "../components/Shared/LoadingSpinner";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const AllArticles = () => {
     const [articles, setApproveArticles] = useState([])
@@ -56,6 +57,9 @@ const AllArticles = () => {
     console.log(searchText)
     return (
         <section className="">
+            <Helmet>
+                <title>All Article</title>
+            </Helmet>
             <div className="md:flex gap-2 mb-3">
                 <div className="flex gap-2">
                     <div>

@@ -1,6 +1,7 @@
-import { IoEyeSharp } from "react-icons/io5";
-import only1 from "../../assets/images/1.webp"
-import only2 from "../../assets/images/2.webp"
+
+import { Link } from "react-router-dom";
+import only1 from "../../assets/images/3.webp"
+
 
 const Travel = () => {
     return (
@@ -9,9 +10,9 @@ const Travel = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-5 items-center">
                 <div>
                     <h3 className="card-title hover:underline  primary-text font-semibold">Price hikes and boycotts: Is trouble brewing at Starbucks?</h3>
-                    <p className="text-neutral-500">DJ Cormac left Northern Ireland and dominated Berlin's queer dance music scene. Here's his guide to Berlin's best LGBTQ+ spaces, from gay saunas to body art.
+                    <p className="text-neutral-500 mb-4">DJ Cormac left Northern Ireland and dominated Berlin's queer dance music scene. Here's his guide to Berlin's best LGBTQ+ spaces, from gay saunas to body art.
                     </p>
-                    <button className="border border-black px-1 mt-4">see more</button>
+                    <Link to="/all-articles" className="border border-black px-1 ">see more</Link>
                 </div>
                 <div>
                     <div style={{

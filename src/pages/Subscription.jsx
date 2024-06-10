@@ -2,6 +2,7 @@ import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "../components/Stripe/CheckoutForm";
+import { Helmet } from "react-helmet-async";
 
 
 const stripePromise = loadStripe(import.meta.env.VITE_PAYMENT_TOKEN);
@@ -15,6 +16,9 @@ const Subscription = () => {
    
     return (
         <div className="w-[400px] mx-auto space-y-10 " >
+            <Helmet>
+                    <title>Subscription</title>
+                </Helmet>
             <div className="flex justify-center">
                 <select required name="name" onChange={(e) => setSubscriptionItem(e.target.value)} className="border-2 border-gray-800 w-full px-3 py-1">
 

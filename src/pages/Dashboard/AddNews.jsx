@@ -6,6 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import AddNewsForm from "../../components/Shared/Form/AddNewsForm";
 import { imageUpload } from "../../utils";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -43,12 +44,12 @@ const AddNews = () => {
             name: 'Sports'
         },
     ];
-    const tags=[]
-    for(const element of tag){
+    const tags = []
+    for (const element of tag) {
         tags.push(element.name)
     }
-  
-    
+
+
     // create publiser
     const [publishers, setPublishers] = useState([])
     const [publisher, setPublisher] = useState("")
@@ -57,7 +58,7 @@ const AddNews = () => {
             .then(res => res.json())
             .then(data => setPublishers(data))
     }, [])
-    const handelPublisher=(e)=>{
+    const handelPublisher = (e) => {
         setPublisher(e)
     }
     console.log(publisher, publishers)
@@ -67,9 +68,9 @@ const AddNews = () => {
             const { data } = await axiosSecure.post(`/add-news`, formData)
             return data
         },
-        onSuccess: async() => {
-            const {data}=await axiosSecure.put(`/increment-publisher/${publisher}`,{total:1})
-            console.log("increment value",data)
+        onSuccess: async () => {
+            const { data } = await axiosSecure.put(`/increment-publisher/${publisher}`, { total: 1 })
+            console.log("increment value", data)
             toast.success("Successfully added News")
             naviget('/my-article')
         }
@@ -112,6 +113,9 @@ const AddNews = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Add Article</title>
+            </Helmet>
             <AddNewsForm options={options} handelPublisher={handelPublisher} publishers={publishers} setTga={setTga} handelFormData={handelFormData} handelPreviewInage={handelPreviewInage} imagePreview={imagePreview} imageName={imageName} loading={loading}></AddNewsForm>
         </div>
     );

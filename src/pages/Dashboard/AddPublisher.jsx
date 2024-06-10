@@ -1,6 +1,7 @@
 import toast from "react-hot-toast";
 import { imageUpload } from "../../utils";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const AddPublisher = () => {
     const axiosSecure = useAxiosSecure()
@@ -22,6 +23,9 @@ const AddPublisher = () => {
     }
     return (
         <div className="flex justify-center items-center  min-h-[80vh]">
+            <Helmet>
+                    <title>Add Publisher</title>
+                </Helmet>
             <form onSubmit={handleSubmit} className="space-y-3">
                <h3 className="text-xl font-semibold text-center">Create New Publisher</h3>
                 <div>

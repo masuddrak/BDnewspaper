@@ -6,6 +6,7 @@ import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { imageUpload } from "../utils";
 import UpadateArticleForm from "../components/Shared/Form/UpadateArticleForm";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -109,6 +110,9 @@ const UpdateArticle = () => {
     }
     return (
         <div>
+            <Helmet>
+                    <title>Update Article</title>
+                </Helmet>
             <UpadateArticleForm oldArticle={oldArticle} options={options} handelPublisher={handelPublisher} publishers={publishers} setTga={setTga} handelFormData={handelFormData} handelPreviewInage={handelPreviewInage} imagePreview={imagePreview} imageName={imageName} loading={loading}></UpadateArticleForm>
         </div>
     );
