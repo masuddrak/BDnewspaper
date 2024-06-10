@@ -71,12 +71,30 @@ const ArticleDetails = () => {
     }
     else if (user && isPremium === "premium" && singleUser.role === "premium" && singleUser.date > today) {
         return (
-            <div className="w-4/6 mx-auto">
+            <div className="md:grid grid-cols-4 gap-10">
+                <div className="col-span-3">
+                    <div className="space-y-2 mb-4">
+                        <h1 className="text-3xl font-semibold">{title}</h1>
+                        <div className="flex justify-between items-end">
+                            <div>
+                                <p className="text-gray-600 ">{new Date(date).toDateString()}</p>
+                                <p className="text-sm flex">{publisher} | <span className="text-neutral-500 mr-1">BD Newspaper |  </span><span className="text-gray-600 flex items-center gap-1 "><IoEyeSharp></IoEyeSharp>{viewCount}</span></p>
+
+                            </div>
+                            <div>
+                                <p className="flex gap-1 items-center">share <IoMdShare></IoMdShare></p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src={image} alt="" className="w-full" />
+                    <p className="mt-2">{description}</p>
+                </div>
                 <div>
-                    <img src={image} alt="" />
-                    <h1>{title}</h1>
-                    <p>{description}</p>
-                    <p>{viewCount}</p>
+                    <div>
+                        {
+                            allArticles.filter(article=>article._id !==_id)?.map(article => <Article key={article._id} article={article}></Article>)
+                        }
+                    </div>
                 </div>
             </div>
         )

@@ -14,7 +14,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                                 Title
                             </label>
                             <input
-                                className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
+                                className='w-full px-4 py-3 text-gray-800 border border-gray-900 focus:outline-gray-900 rounded-md '
                                 name='title'
                                 id='title'
                                 type='text'
@@ -31,7 +31,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                                 </label>
 
                                 <Select
-                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 outline-rose-500 rounded-md '
+                                    className='w-full px-4 py-3 text-gray-800 border border-gray-900 outline-gray-900 rounded-md '
                                     required={true}
                                     options={options}
                                     labelField="name"
@@ -48,7 +48,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                                 </label>
                                 <select
                                     required
-                                    className='w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-rose-500 rounded-md '
+                                    className='w-full px-4 py-1 text-gray-800 border border-gray-900 focus:outline-gray-900 rounded-md '
                                     name='category'
                                     onChange={(e) => handelPublisher(e.currentTarget.value)}
 
@@ -62,7 +62,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                             </div>
 
                             <div className='flex items-center gap-2 p-4 bg-white w-full border-dotted border-4  m-auto rounded-lg'>
-                                <div className='flex-1 file_upload px-5 relative   border-gray-300 rounded-lg'>
+                                <div className='flex-1 file_upload px-5 relative   border-gray-900 rounded-lg'>
                                     <div className='flex flex-col w-max mx-auto text-center'>
                                         <label>
                                             <input
@@ -75,7 +75,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                                                 hidden
                                                 required
                                             />
-                                            <div className='bg-rose-500 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-rose-500'>
+                                            <div className='bg-gray-900 text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-gray-900'>
                                                 {imageName ? <span>
                                                     {imageName.length > 15 ? imageName.split('.')[0].slice(0, 15) + "...." + imageName.split('.')[1] : imageName}
                                                 </span> : "Upload Image"}
@@ -98,7 +98,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                     <textarea
                         required
                         id='description'
-                        className='block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-rose-300 focus:outline-rose-500 '
+                        className='block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-gray-900 focus:outline-gray-900 '
                         name='description'
                         defaultValue={description}
                     ></textarea>
@@ -106,7 +106,7 @@ const UpadateArticleForm = ({ handelPublisher, handelFormData, publishers, optio
                 <button
                     disabled={loading}
                     type='submit'
-                    className='p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-rose-500'
+                    className='p-3 w-full mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-gray-900'
                 >
                     {
                         loading ? <SiProteus className='animate-spin m-auto'></SiProteus> : "Save & Continue"

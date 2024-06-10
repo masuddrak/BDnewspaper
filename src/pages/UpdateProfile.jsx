@@ -55,11 +55,10 @@ const UpdateProfile = () => {
                 <title>Profile</title>
             </Helmet>
             <div className='bg-white shadow-lg rounded-2xl w-3/5'>
-                <img
-                    alt='profile'
-                    src='https://wallpapercave.com/wp/wp10784415.jpg'
-                    className='w-full mb-4 rounded-t-lg h-36'
-                />
+                
+                <div className='w-full mb-4 bg-gray-900 rounded-t-lg h-36 flex items-center justify-center'>
+                    <h3 className='text-white text-xl font-semibold'>Upadte Profile</h3>
+                </div>
                 <div className='flex flex-col items-center justify-center p-4 -mt-16'>
                     <a href='#' className='relative block'>
                         <img
@@ -69,7 +68,7 @@ const UpdateProfile = () => {
                         />
                     </a>
 
-                    <p className='p-2 px-4 text-xs text-white bg-pink-500 rounded-full'>
+                    <p className='p-2 px-4 text-xs text-white bg-gray-900 rounded-full'>
                         {singleUser.role}
                     </p>
                     <p className='mt-2 text-xl font-medium text-gray-800 '>
@@ -115,7 +114,7 @@ const UpdateProfile = () => {
                                                 id='name'
                                                 required
                                                 placeholder='Enter Your Name Here'
-                                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-gray-200 text-gray-900'
+                                                className='w-full px-3 py-2 border rounded-md border-gray-900 focus:outline-gray-900 bg-gray-200 text-gray-900'
                                                 data-temp-mail-org='0'
                                             />
                                         </div>
@@ -126,7 +125,7 @@ const UpdateProfile = () => {
                                         <button
                                             disabled={loading}
                                             type='submit'
-                                            className='bg-rose-500 w-full rounded-md py-3 text-white'
+                                            className='bg-gray-900 w-full rounded-md py-3 text-white'
                                         >
                                             {loading ? (
                                                 <TbFidgetSpinner className='animate-spin m-auto' />

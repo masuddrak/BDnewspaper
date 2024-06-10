@@ -23,7 +23,7 @@ const AddPublisher = () => {
     return (
         <div className="flex justify-center items-center  min-h-[80vh]">
             <form onSubmit={handleSubmit} className="space-y-3">
-               
+               <h3 className="text-xl font-semibold text-center">Create New Publisher</h3>
                 <div>
                     <label htmlFor='image' className='block mb-2 text-sm'>
                         Publisher Image:

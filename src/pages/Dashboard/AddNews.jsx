@@ -53,7 +53,7 @@ const AddNews = () => {
     const [publishers, setPublishers] = useState([])
     const [publisher, setPublisher] = useState("")
     useEffect(() => {
-        fetch("http://localhost:5000/publiser")
+        fetch("https://news-paper-delta.vercel.app/publiser")
             .then(res => res.json())
             .then(data => setPublishers(data))
     }, [])

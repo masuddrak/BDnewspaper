@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const CheckoutForm = ({  subscriptionPrice,subscriptionLilimt }) => {
     const { user } = useAuth()
@@ -12,6 +14,7 @@ const CheckoutForm = ({  subscriptionPrice,subscriptionLilimt }) => {
     const [cardError, setCardError] = useState("")
     const [clientSecret, setClientSecret] = useState("");
     const axiosSecure = useAxiosSecure()
+    const naviget =useNavigate()
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
         if (subscriptionPrice > 1) {
@@ -77,6 +80,8 @@ const CheckoutForm = ({  subscriptionPrice,subscriptionLilimt }) => {
               try {
                 const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/user`, sendUserData)
                 console.log(data)
+                toast.success("your payment success!!")
+                naviget("/premium-articles")
               } catch (error) {
                 console.log(error)
               }

@@ -23,7 +23,7 @@ const Navbar = () => {
         <Container>
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
-            <Link to='/' className='text-xl font-bold'>BD Newspaper</Link>
+            <Link to='/' className='text-lg font-extrabold uppercase'>BD<span className='text-red-500'>News</span>paper</Link>
             <div className='hidden md:flex'>
               {navlinks}
             </div>
@@ -51,18 +51,28 @@ const Navbar = () => {
                       width='30'
                     />
                   </div>
-                </div> : <Link
-                  to='/signup'
-                  className='px-4 py-1 font-semibold bg-black text-white'
-                >
-                  Sign Up
-                </Link>}
+                </div> :
+                  <div className='flex gap-3'>
+                    <Link
+                      to='/signup'
+                      className='px-4 py-1 font-semibold bg-black text-white'
+                    >
+                      Sign Up
+                    </Link>
+                    <Link
+                      to='/login'
+                      className='px-4 py-1 font-semibold bg-black text-white'
+                    >
+                      Login
+                    </Link>
+                  </div>
+                }
               </div>
               {isOpen && (
                 <div className='absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-white overflow-hidden right-0 top-12 text-sm'>
                   <div className='flex flex-col cursor-pointer'>
 
-                    <div className='flex flex-col md:hidden'>
+                    <div className='flex flex-col gap-1 md:hidden'>
                       {navlinks}
                     </div>
 
@@ -72,7 +82,7 @@ const Navbar = () => {
                           to='/dashboard'
                           className='px-4 py-3 hover:bg-neutral-100 transition font-semibold'
                         >
-                          Dashoard
+                         Admin Dashoard
                         </Link>
                         <Link
                           to='/upadte-profile'

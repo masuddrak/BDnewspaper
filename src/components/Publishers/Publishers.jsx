@@ -16,7 +16,7 @@ const Publishers = () => {
         <div>
             <div className="hidden md:flex">
                 <Swiper
-                    slidesPerView={4}
+                    slidesPerView={5}
                     spaceBetween={30}
                     pagination={{
                         clickable: true,
@@ -30,7 +30,7 @@ const Publishers = () => {
                             publishers.map(publisher => <SwiperSlide key={publisher._id}><div className="my-10 space-y-3">
                                 <div style={{
                                     backgroundImage: `url(${publisher.iamge})`
-                                }} className="h-[200px] w-[250px] bg-no-repeat  hover:opacity-85 transition-all bg-cover top-0">
+                                }} className="h-[150px] w-[250px] bg-no-repeat  hover:opacity-85 transition-all bg-contain top-0">
 
                                 </div>
                                 <h3 className="card-title hover:underline  primary-text font-semibold">{publisher.name}</h3>

@@ -5,6 +5,8 @@ import ArticlesSlider from '../../components/Sliders/ArticlesSlider'
 import Publishers from '../../components/Publishers/Publishers'
 import LeftSide from './LeftSide'
 import RightSide from './RightSide'
+import OnlyBdNewspare from './OnlyBdNewspare'
+import Travel from './Travel'
 
 
 const Home = () => {
@@ -24,9 +26,15 @@ const Home = () => {
           <RightSide></RightSide>
         </div>
       </div>
+      {/* only bbc section */}
+      <div>
+        <OnlyBdNewspare></OnlyBdNewspare>
+      </div>
       {/* publisher */}
       <Publishers></Publishers>
       <UserCalculation></UserCalculation>
+      {/* travel */}
+      <Travel></Travel>
       <PremiumSection></PremiumSection>
     </div>
   )

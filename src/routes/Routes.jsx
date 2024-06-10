@@ -34,24 +34,24 @@ export const router = createBrowserRouter([
       },
       {
         path: '/add-Article',
-        element: <AddNews></AddNews>,
+        element: <PrivateRoute><AddNews></AddNews></PrivateRoute>,
       },
       {
         path: '/all-articles',
         element: <AllArticles></AllArticles>,
-        loader:()=>axios("http://localhost:5000/total-article")
+        loader:()=>axios("https://news-paper-delta.vercel.app/total-article")
       },
       {
         path: '/my-article',
-        element: <MyArticle></MyArticle>,
+        element: <PrivateRoute><MyArticle></MyArticle></PrivateRoute>,
       },
       {
         path: '/subscription',
-        element: <Subscription></Subscription>,
+        element: <PrivateRoute><Subscription></Subscription></PrivateRoute>,
       },
       {
         path: '/upadte-profile',
-        element: <UpdateProfile></UpdateProfile>,
+        element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>,
       },
       {
         path: '/premium-articles',
@@ -60,12 +60,12 @@ export const router = createBrowserRouter([
       {
         path: '/article-details/:id',
         element: <PrivateRoute><ArticleDetails></ArticleDetails></PrivateRoute>,
-        loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
+        loader:({params})=>axios(`https://news-paper-delta.vercel.app/article-details/${params.id}`)
       },
       {
         path: '/upadte-article/:id',
-        element: <UpdateArticle></UpdateArticle>,
-        loader:({params})=>axios(`http://localhost:5000/article-details/${params.id}`)
+        element: <PrivateRoute><UpdateArticle></UpdateArticle></PrivateRoute>,
+        loader:({params})=>axios(`https://news-paper-delta.vercel.app/article-details/${params.id}`)
       },
      
     ],
@@ -79,20 +79,20 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <PrivateRoute><DashoardHome></DashoardHome></PrivateRoute>
+        element: <PrivateRoute><AdminProvider><DashoardHome></DashoardHome></AdminProvider></PrivateRoute>
       },
       {
         path: "/dashboard/all-users",
-        element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
+        element: <PrivateRoute><AdminProvider><AllUsers></AllUsers></AdminProvider></PrivateRoute>
       },
       {
         path: "/dashboard/all-article",
-        element: <PrivateRoute><AllArticle></AllArticle></PrivateRoute>,
-        loader:()=>axios("http://localhost:5000/total-article")
+        element: <PrivateRoute><AdminProvider><AllArticle></AllArticle></AdminProvider></PrivateRoute>,
+        loader:()=>axios("https://news-paper-delta.vercel.app/total-article")
       },
       {
         path: "/dashboard/add-publisher",
-        element: <PrivateRoute><AddPublisher></AddPublisher></PrivateRoute>
+        element: <PrivateRoute><AdminProvider><AddPublisher></AddPublisher></AdminProvider></PrivateRoute>
       },
     ]
   },
