@@ -7,14 +7,23 @@ import LeftSide from './LeftSide'
 import RightSide from './RightSide'
 import OnlyBdNewspare from './OnlyBdNewspare'
 import Travel from './Travel'
+import SubscriptionModal from '../../components/Shared/Modal/SubscriptionModal'
+import { useState } from 'react'
 
 
 const Home = () => {
+  const [isOpen,setIsOpen]=useState(true)
+  const closeModal=()=>{
+    setIsOpen(false)
+  }
   return (
     <div className=''>
       <Helmet>
         <title>BD Newspaper | Bangladesh Bigets News</title>
       </Helmet>
+
+      {/* suscriptin modal */}
+      <SubscriptionModal closeModal={closeModal} isOpen={isOpen}></SubscriptionModal>
       <div className='md:grid grid-cols-4 gap-4'>
         <div>
           <LeftSide></LeftSide>
@@ -30,11 +39,12 @@ const Home = () => {
       <div>
         <OnlyBdNewspare></OnlyBdNewspare>
       </div>
-      {/* publisher */}
-      <Publishers></Publishers>
+     
       <UserCalculation></UserCalculation>
       {/* travel */}
       <Travel></Travel>
+       {/* publisher */}
+       <Publishers></Publishers>
       <PremiumSection></PremiumSection>
     </div>
   )

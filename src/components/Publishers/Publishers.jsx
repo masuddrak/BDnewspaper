@@ -27,7 +27,7 @@ const Publishers = () => {
 
                     <div>
                         {
-                            publishers.map(publisher => <SwiperSlide key={publisher._id}><div className="my-10 space-y-3">
+                            publishers.map(publisher => <SwiperSlide key={publisher._id}><div className="mt-14 space-y-3">
                                 <div style={{
                                     backgroundImage: `url(${publisher.iamge})`
                                 }} className="h-[150px] w-[250px] bg-no-repeat  hover:opacity-85 transition-all bg-contain top-0">

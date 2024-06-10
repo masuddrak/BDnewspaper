@@ -4,7 +4,7 @@ import useUserCount from '../../hooks/useUserCount';
 const UserCalculation = () => {
     const { userCount } = useUserCount()
     return (
-        <div className='text-3xl text-center font-bold flex justify-evenly text-white bg-gray-900 px-5 py-10'>
+        <div className='text-3xl text-center mt-14 font-bold flex justify-evenly text-white bg-gray-900 px-5 py-10'>
             <div className=''>
                 <CountUp
                     end={userCount?.totalUser}

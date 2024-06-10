@@ -1,18 +1,19 @@
+import { Link } from "react-router-dom";
 
 const PremiumSection = () => {
     return (
         <section className="py-20 dark:bg-gray-100 dark:text-gray-800">
             <div className="container px-4 mx-auto">
-                <div className="max-w-2xl mx-auto mb-16 text-center">
-                    <span className="font-bold tracking-wider uppercase dark:text-default-600">Pricing</span>
-                    <h2 className="text-4xl font-bold lg:text-5xl"> Your Subscription Plan</h2>
+                <div className="max-w-2xl mx-auto mb-5 text-center">
+                    <span className="font-semibold tracking-wider uppercase dark:text-default-600">Pricing</span>
+                    <h2 className="text-xl font-bold lg:text-2xl text-gray-900"> Your Subscription Plan</h2>
                 </div>
                 <div className="flex flex-wrap items-stretch -mx-4">
                     <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                         <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-50">
                             <div className="space-y-2">
-                                <h4 className="text-2xl font-bold">Beginner</h4>
-                                <span className="text-6xl font-bold">Free</span>
+                                <h4 className="text-sm text-gray-500">Beginner</h4>
+                                <span className="text-2xl font-bold">Free</span>
                             </div>
                             <p className="mt-3 leading-relaxed dark:text-gray-600">Etiam ac convallis enim, eget euismod dolor.</p>
                             <ul className="flex-1 mb-6 dark:text-gray-600">
@@ -35,14 +36,14 @@ const PremiumSection = () => {
                                     <span>Tristique enim nec</span>
                                 </li>
                             </ul>
-                            <button type="button" className="inline-block px-5 py-3 border border-1 border-gray-700 font-semibold tracking-wider text-center rounded dark:bg-default-600 dark:text-gray-50">Get Started</button>
+                            <Link to="/subscription" rel="noopener noreferrer" href="#" className="inline-block w-full border border-1 border-gray-700 px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-default-600 dark:text-gray-50">Get Started</Link>
                         </div>
                     </div>
                     <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                         <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-default-600 dark:text-gray-50">
                             <div className="space-y-2">
-                                <h4 className="text-2xl font-bold">Pro</h4>
-                                <span className="text-6xl font-bold">$24
+                                <h4 className="text-sm text-gray-500">Pro</h4>
+                                <span className="text-2xl font-bold">$24
                                     <span className="text-sm tracking-wide">/month</span>
                                 </span>
                             </div>
@@ -73,14 +74,14 @@ const PremiumSection = () => {
                                     <span>Aenean et lectus blandit</span>
                                 </li>
                             </ul>
-                            <a rel="noopener noreferrer" href="#" className="inline-block border border-1 border-gray-700 w-full px-5 py-3 font-bold tracking-wider text-center rounded dark:bg-gray-100 dark:text-default-600">Get Started</a>
+                            <Link to="/subscription" rel="noopener noreferrer" href="#" className="inline-block w-full border border-1 border-gray-700 px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-default-600 dark:text-gray-50">Get Started</Link>
                         </div>
                     </div>
                     <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
                         <div className="flex flex-grow flex-col p-6 space-y-6 rounded shadow sm:p-8 dark:bg-gray-50">
                             <div className="space-y-2">
-                                <h4 className="text-2xl font-bold">Team</h4>
-                                <span className="text-6xl font-bold">$72
+                                <h4 className="text-sm text-gray-500">Team</h4>
+                                <span className="text-2xl font-bold">$72
                                     <span className="text-sm tracking-wide">/month</span>
                                 </span>
                             </div>
@@ -117,7 +118,7 @@ const PremiumSection = () => {
                                     <span>Vivamus ut lectus ex</span>
                                 </li>
                             </ul>
-                            <a rel="noopener noreferrer" href="#" className="inline-block w-full border border-1 border-gray-700 px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-default-600 dark:text-gray-50">Get Started</a>
+                            <Link to="/subscription" rel="noopener noreferrer" href="#" className="inline-block w-full border border-1 border-gray-700 px-5 py-3 font-semibold tracking-wider text-center rounded dark:bg-default-600 dark:text-gray-50">Get Started</Link>
                         </div>
                     </div>
                 </div>
